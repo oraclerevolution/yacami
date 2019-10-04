@@ -35,6 +35,14 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
 })
 
-const MyApp = createAppContainer(MyDrawerNavigator)
+const MyStackNavigator = createStackNavigator({
+    "home":{screen: MyDrawerNavigator},
+    "Shopping": {screen: PageShopping}
+}, {
+    initialRouteName: 'home',
+    headerMode: 'none
+})
+
+const MyApp = createAppContainer(MyStackNavigator)
 
 export default MyApp
